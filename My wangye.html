@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MQ:米乔的个人网站</title>
+    <link rel="shortcut icon" href="https://ajimiqiao.github.io/mqhome/MQ.png" type="image/x-icon">
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            height: 100vh;
+            background-image: linear-gradient(60deg,
+            #2c3e50, #27ae60, #2980b9, #e74c3c, #8e44ad, #fedb00, #548af7);
+            background-size: 2000%;
+            text-align: center;
+            animation: bgmove 120s infinite;
+        }
+
+        @keyframes bgmove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .barbtn {
+            width: 300px;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            margin-left: -150px;
+
+        }
+
+        .navbar {
+            margin: 0 auto;
+            width: 100%;
+            height: 70px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 2px 10px #111;
+            font-family: "Micosoft YaHei UI", "微软雅黑";
+            font-size: 25px;
+            position: relative;
+            transition: all 0.3s;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            backdrop-filter: blur(4px);
+        }
+
+        a {
+            text-decoration: none;
+            margin-top: 20px;
+            box-sizing: border-box;
+            width: 100px;
+            line-height: 30px;
+            padding: 0 10px;
+            color: black;
+            float: left;
+            text-align: center;
+        }
+        .al {
+            border: none;
+            font-family: "Micosoft YaHei UI", "微软雅黑";
+            font-size: 25px;
+            background-color: rgba(255,255,255,0);
+            text-decoration: none;
+            margin-top: 20px;
+            box-sizing: border-box;
+            width: 100px;
+            line-height: 30px;
+            padding: 0 10px;
+            color: black;
+            float: left;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .mqtle {
+            margin-top: 20px;
+            box-sizing: border-box;
+            width: 100px;
+            line-height: 30px;
+            padding: 0 10px;
+            color: black;
+            float: left;
+            white-space: nowrap;
+        }
+
+        .barbtn::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .menu_xf {
+            transition: all 0.3s;
+            position: fixed;
+            top: 0px;
+        }
+
+        .box_top {
+            margin-top: 70px;
+        }
+
+        .mqb {
+            text-align: center;
+            margin-left: 0px;
+            margin-top: 200px;
+            box-shadow: 0px 2px 10px #111;
+            border-radius: 97px;
+        }
+
+        .ywm {
+            font-size: 150px;
+            font-weight: bold;
+            height: 50px;
+            margin-top: 10px;
+            white-space: nowrap;
+        }
+
+        .ywmf {
+            font-size: 50px;
+            height: 50px;
+            margin-top: 10px;
+        }
+
+        .a2tle {
+            font-size: 50px;
+            height: 50px;
+            margin-top: 300px;
+        }
+
+        .a2tlef {
+            font-size: 120px;
+            font-weight: bold;
+            height: 50px;
+            margin-top: 10px;
+            white-space: nowrap;
+        }
+
+        .zy {
+            min-width: 550px;
+            position: relative;
+            margin-left: 25%;
+            width: 50%;
+            height: 480px;
+            border-radius: 20px;
+            color: #eee;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+            animation: am3 ease-out 1s 0.2s backwards;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .zy:hover {
+            box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.9),
+            4px 4px 25px rgba(0, 0, 0, 0.9);
+        }
+
+        .vip {
+            margin-right: 10px;
+            white-space: nowrap;
+            width: 200px;
+            height: 100px;
+            border-radius: 20px;
+            color: #eee;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+            animation: am3 ease-out 1s 0.2s backwards;
+            transition: all 0.3s;
+        }
+
+        .viplogo {
+            width: 80px;
+            height: 80px;
+            margin-top: 10px;
+            border-radius: 50%;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        .vip:hover {
+            width: 210px;
+            box-shadow: 0px 0px 10px #999, inset 0px 0px 5px #333;
+        }
+
+        .mqint {
+            white-space: nowrap;
+            width: 200px;
+            height: 100px;
+            border-radius: 20px;
+            color: #eee;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+            animation: am3 ease-out 1s 0.2s backwards;
+            transition: all 0.3s;
+        }
+
+        .mqintlogo {
+            width: 100px;
+            height: 80px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        .mqint:hover {
+            width: 210px;
+            box-shadow: 0px 0px 10px #999, inset 0px 0px 5px #333;
+        }
+
+        .sy {
+            font-size: 50px;
+            height: 50px;
+            margin-top: 300px;
+        }
+
+        .hy {
+            min-width: 550px;
+            position: relative;
+            margin-left: 25%;
+            width: 50%;
+            height: 480px;
+            border-radius: 20px;
+            color: #eee;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+            animation: am3 ease-out 1s 0.2s backwards;
+            transition: all 0.3s;
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pyjbt {
+            font-size: 120px;
+            font-weight: bold;
+            height: 50px;
+            margin-top: 10px;
+            white-space: nowrap;
+        }
+
+        .aig {
+            margin-left: 20px;
+            white-space: nowrap;
+            width: 200px;
+            height: 100px;
+            border-radius: 20px;
+            color: #000;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+            animation: am3 ease-out 1s 0.2s backwards;
+            transition: all 0.3s;
+        }
+
+        .aitext {
+            height: 100px;
+            font-size: 40px;
+            font-family: "Micosoft YaHei UI", "微软雅黑";
+        }
+
+        .aig:hover {
+            width: 210px;
+            box-shadow: 0px 0px 10px #999, inset 0px 0px 5px #333;
+        }
+
+        .clkg {
+            margin-left: 20px;
+            white-space: nowrap;
+            width: 200px;
+            height: 100px;
+            border-radius: 20px;
+            color: #000;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+            animation: am3 ease-out 1s 0.2s backwards;
+            transition: all 0.3s;
+        }
+
+        .clktext {
+            height: 100px;
+            font-size: 40px;
+            font-family: "Micosoft YaHei UI", "微软雅黑";
+        }
+
+        .clkg:hover {
+            width: 210px;
+            box-shadow: 0px 0px 10px #999, inset 0px 0px 5px #333;
+        }
+
+        .dsqg {
+            margin-left: 20px;
+            white-space: nowrap;
+            width: 200px;
+            height: 100px;
+            border-radius: 20px;
+            color: #000;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+            animation: am3 ease-out 1s 0.2s backwards;
+            transition: all 0.3s;
+        }
+
+        .dsqtext {
+            height: 100px;
+            font-size: 40px;
+            font-family: "Micosoft YaHei UI", "微软雅黑";
+        }
+
+        .dsqg:hover {
+            width: 210px;
+            box-shadow: 0px 0px 10px #999, inset 0px 0px 5px #333;
+        }
+
+        .timeg {
+            margin-left: 20px;
+            white-space: nowrap;
+            width: 200px;
+            height: 100px;
+            border-radius: 20px;
+            color: #000;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+            animation: am3 ease-out 1s 0.2s backwards;
+            transition: all 0.3s;
+        }
+
+        .timetext {
+            height: 100px;
+            font-size: 40px;
+            font-family: "Micosoft YaHei UI", "微软雅黑";
+        }
+
+        .timeg:hover {
+            width: 210px;
+            box-shadow: 0px 0px 10px #999, inset 0px 0px 5px #333;
+        }
+
+        .weatherg {
+            margin-left: 20px;
+            margin-right: 20px;
+            white-space: nowrap;
+            width: 200px;
+            height: 100px;
+            border-radius: 20px;
+            color: #000;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+            animation: am3 ease-out 1s 0.2s backwards;
+            transition: all 0.3s;
+        }
+
+        .weathertext {
+            height: 100px;
+            font-size: 40px;
+            font-family: "Micosoft YaHei UI", "微软雅黑";
+        }
+
+        .weatherg:hover {
+            width: 210px;
+            box-shadow: 0px 0px 10px #999, inset 0px 0px 5px #333;
+        }
+
+        .container {
+            height: 40px;
+            position: relative;
+            display: flex;
+            width: 1000px;
+            overflow: hidden;
+            mask-image: linear-gradient(
+                    90deg, transparent, #fff 20%, #fff 80%, transparent
+            );
+        }
+
+        .container div {
+            white-space: nowrap;
+            animation: animate var(--t) linear infinite;
+        }
+
+        .container div:nth-child(2) {
+            animation: animate2 var(--t) linear infinite;
+            animation-delay: calc(var(--t) / -2);
+        }
+
+        .container div span {
+            display: inline-flex;
+            margin: 10px;
+            letter-spacing: .2em;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #000000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes animate {
+            from {
+                transform: translate(100%);
+            }
+            to {
+                transform: translate(-130%);
+            }
+        }
+
+        @keyframes animate2 {
+            from {
+                transform: translate(0);
+            }
+            to {
+                transform: translate(-200%);
+            }
+        }
+
+        .lb{
+            position: relative;
+            margin-left: 23%;
+            width: 1000px;
+            height: 220px;
+            border-radius: 20px;
+            color: #eee;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+            animation: am3 ease-out 1s 0.2s backwards;
+            transition: all 0.3s;
+            display: block;
+            justify-content: center;
+        }
+
+        .lb:hover {
+            box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.9),
+            4px 4px 25px rgba(0, 0, 0, 0.9);
+        }
+
+        .rm {
+            font-size: 50px;
+            height: 50px;
+            margin-top: 300px;
+        }
+
+        .qtwz {
+            font-size: 120px;
+            font-weight: bold;
+            height: 50px;
+            margin-top: 10px;
+            white-space: nowrap;
+        }
+
+        .bombar {
+            margin-top: 200px;
+            width: 100%;
+            height: 1000px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .jr{
+            display: block;
+        }
+
+        .jrwm {
+            font-size: 120px;
+            font-weight: bold;
+            height: 50px;
+            color: #fff;
+            margin-top: 40px;
+            white-space: nowrap;
+        }
+
+        .wmjl {
+            width: 370px;
+            height: 462px;
+            border-radius: 10px;
+            transform: translate(0, 50px);
+        }
+
+        .qqhao {
+            color: #fff;
+            font-size: 20px;
+            height: 50px;
+            margin-top: 70px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <p class="mqtle">MQ</p>
+    <div class="barbtn">
+        <button class="al">案例</button>
+        <a href="https://ajimiqiao.github.io/mqhome/tj.html">导航</a>
+        <a href="https://ajimiqiao.github.io/mqhome/zz.html">赞助</a>
+    </div>
+</div>
+<div>
+    <img src="https://ajimiqiao.github.io/mqhome/MQ.png" class="mqb">
+    <p class="ywm">让我们开始吧</p>
+    <p class="ywmf">寻找你需要的资源</p>
+</div>
+<div>
+    <p class="a2tle">最新</p>
+    <p class="a2tlef">自研网站</p>
+</div>
+<div class="zy">
+    <a href="https://ajimiqiao.github.io/vipjiexi/VIP%E8%A7%86%E9%A2%91%E8%A7%A3%E6%9E%90v1.1.0PC.html" class="vip">
+        <div class="viplogog">
+            <img class="viplogo" src="vip.png">
+        </div>
+    </a>
+    <a href="https://ajimiqiao.github.io/mqinternet/MQsouso.html" class="mqint">
+        <div class="mqintlogog">
+            <img class="mqintlogo" src="web.png">
+        </div>
+    </a>
+</div>
+<div>
+    <p class="sy">实用</p>
+    <p class="pyjbt">Python脚本</p>
+</div>
+<div class="hy">
+    <div class="gs">
+        <a href="https://ajimiqiao.github.io/ziyuan/AI.zip" class="aig">
+            <div class="aitextg">
+                <p class="aitext">AI聊天</p>
+            </div>
+        </a>
+        <a href="https://ajimiqiao.github.io/ziyuan/clock.zip" class="clkg">
+            <div class="clktextg">
+                <p class="clktext">计时器</p>
+            </div>
+        </a>
+        <a href="https://ajimiqiao.github.io/ziyuan/dsq.zip" class="dsqg">
+            <div class="dsqtextg">
+                <p class="dsqtext">定时器</p>
+            </div>
+        </a>
+        <a href="https://ajimiqiao.github.io/ziyuan/time.zip" class="timeg">
+            <div class="timetextg">
+                <p class="timetext">时钟</p>
+            </div>
+        </a>
+    </div>
+    <a href="https://ajimiqiao.github.io/ziyuan/weather.zip" class="weatherg">
+        <div class="weathertextg">
+            <p class="weathertext">天气</p>
+        </div>
+    </a>
+</div>
+<div>
+    <p class="rm">其他</p>
+    <p class="qtwz">热门网站</p>
+</div>
+<div class="lb">
+    <div class="container" style="--t:20s">
+        <div>
+            <span href="https://www.csdn.com">csdn</span>
+            <span href="https://www.yutu.cn/">羽兔网</span>
+            <span href="https://www.baidu.com/">百度</span>
+            <span href="https://www.ico51.cn/">icon生成器</span>
+            <span href="https://www.sysmini.com/">极简系统</span>
+            <span href="https://www.python.org/">Python</span>
+            <span href="https://zhutix.com/">致美化</span>
+            <span href="https://www.iconfont.cn/">iconfont</span>
+            <span href="https://www.uy5.net/">克隆窝</span>
+        </div>
+        <div>
+            <span href="https://3.jetbra.in/">jetbrains激活</span>
+            <span href="https://www.cssbuttongenerator.com/">css自定义按钮</span>
+            <span href="https://www.w3school.com.cn/">W3School</span>
+            <span href="https://next.itellyou.cn/">MSDN</span>
+            <span href="https://hellowindows.cn/">HelloWin</span>
+            <span href="https://steampp.net/">加速器</span>
+            <span href="https://scholar.scqylaw.com/">谷歌文献</span>
+            <span href="https://www.qijishow.com/">奇迹秀</span>
+            <span href="https://www.ruancang.net/">软仓</span>
+        </div>
+    </div>
+    <div class="container" style="--t:60s">
+        <div>
+            <span href="https://www.csdn.com">csdn</span>
+            <span href="https://www.yutu.cn/">羽兔网</span>
+            <span href="https://www.baidu.com/">百度</span>
+            <span href="https://www.ico51.cn/">icon生成器</span>
+            <span href="https://www.sysmini.com/">极简系统</span>
+            <span href="https://www.python.org/">Python</span>
+            <span href="https://zhutix.com/">致美化</span>
+            <span href="https://www.iconfont.cn/">iconfont</span>
+            <span href="https://www.uy5.net/">克隆窝</span>
+        </div>
+        <div>
+            <span href="https://3.jetbra.in/">jetbrains激活</span>
+            <span href="https://www.cssbuttongenerator.com/">css自定义按钮</span>
+            <span href="https://www.w3school.com.cn/">W3School</span>
+            <span href="https://next.itellyou.cn/">MSDN</span>
+            <span href="https://hellowindows.cn/">HelloWin</span>
+            <span href="https://steampp.net/">加速器</span>
+            <span href="https://scholar.scqylaw.com/">谷歌文献</span>
+            <span href="https://www.qijishow.com/">奇迹秀</span>
+            <span href="https://www.ruancang.net/">软仓</span>
+        </div>
+    </div>
+    <div class="container" style="--t:30s">
+        <div>
+            <span href="https://www.csdn.com">csdn</span>
+            <span href="https://www.yutu.cn/">羽兔网</span>
+            <span href="https://www.baidu.com/">百度</span>
+            <span href="https://www.ico51.cn/">icon生成器</span>
+            <span href="https://www.sysmini.com/">极简系统</span>
+            <span href="https://www.python.org/">Python</span>
+            <span href="https://zhutix.com/">致美化</span>
+            <span href="https://www.iconfont.cn/">iconfont</span>
+            <span href="https://www.uy5.net/">克隆窝</span>
+        </div>
+        <div>
+            <span href="https://3.jetbra.in/">jetbrains激活</span>
+            <span href="https://www.cssbuttongenerator.com/">css自定义按钮</span>
+            <span href="https://www.w3school.com.cn/">W3School</span>
+            <span href="https://next.itellyou.cn/">MSDN</span>
+            <span href="https://hellowindows.cn/">HelloWin</span>
+            <span href="https://steampp.net/">加速器</span>
+            <span href="https://scholar.scqylaw.com/">谷歌文献</span>
+            <span href="https://www.qijishow.com/">奇迹秀</span>
+            <span href="https://www.ruancang.net/">软仓</span>
+        </div>
+    </div>
+    <div class="container" style="--t:10s">
+        <div>
+            <span href="https://www.csdn.com">csdn</span>
+            <span href="https://www.yutu.cn/">羽兔网</span>
+            <span href="https://www.baidu.com/">百度</span>
+            <span href="https://www.ico51.cn/">icon生成器</span>
+            <span href="https://www.sysmini.com/">极简系统</span>
+            <span href="https://www.python.org/">Python</span>
+            <span href="https://zhutix.com/">致美化</span>
+            <span href="https://www.iconfont.cn/">iconfont</span>
+            <span href="https://www.uy5.net/">克隆窝</span>
+        </div>
+        <div>
+            <span href="https://3.jetbra.in/">jetbrains激活</span>
+            <span href="https://www.cssbuttongenerator.com/">css自定义按钮</span>
+            <span href="https://www.w3school.com.cn/">W3School</span>
+            <span href="https://next.itellyou.cn/">MSDN</span>
+            <span href="https://hellowindows.cn/">HelloWin</span>
+            <span href="https://steampp.net/">加速器</span>
+            <span href="https://scholar.scqylaw.com/">谷歌文献</span>
+            <span href="https://www.qijishow.com/">奇迹秀</span>
+            <span href="https://www.ruancang.net/">软仓</span>
+        </div>
+    </div>
+    <div class="container" style="--t:50s">
+        <div>
+            <span href="https://www.csdn.com">csdn</span>
+            <span href="https://www.yutu.cn/">羽兔网</span>
+            <span href="https://www.baidu.com/">百度</span>
+            <span href="https://www.ico51.cn/">icon生成器</span>
+            <span href="https://www.sysmini.com/">极简系统</span>
+            <span href="https://www.python.org/">Python</span>
+            <span href="https://zhutix.com/">致美化</span>
+            <span href="https://www.iconfont.cn/">iconfont</span>
+            <span href="https://www.uy5.net/">克隆窝</span>
+        </div>
+        <div>
+            <span href="https://3.jetbra.in/">jetbrains激活</span>
+            <span href="https://www.cssbuttongenerator.com/">css自定义按钮</span>
+            <span href="https://www.w3school.com.cn/">W3School</span>
+            <span href="https://next.itellyou.cn/">MSDN</span>
+            <span href="https://hellowindows.cn/">HelloWin</span>
+            <span href="https://steampp.net/">加速器</span>
+            <span href="https://scholar.scqylaw.com/">谷歌文献</span>
+            <span href="https://www.qijishow.com/">奇迹秀</span>
+            <span href="https://www.ruancang.net/">软仓</span>
+        </div>
+    </div>
+</div>
+<div class="bombar">
+    <div class="jr">
+        <p class="jrwm">加入我们</p>
+        <img src="https://ajimiqiao.github.io/mqhome/rwmjl.jpg" class="wmjl">
+        <p class="qqhao">QQ:3497867186</p>
+    </div>
+</div>
+<script>
+    window.addEventListener(
+        "mousewheel",
+        function (event) {
+            if (event.ctrlKey || event.metaKey) {
+                event.preventDefault();
+            } else {
+                console.log(12313);
+            }
+        },
+        {passive: false},
+    );
+    document.querySelector('.al').addEventListener('click', () => {
+        document.querySelectorAll('div')[3].scrollIntoView({
+            block: 'start',
+            behavior: 'smooth'
+        })
+    })
+</script>
+</body>
+</html>
