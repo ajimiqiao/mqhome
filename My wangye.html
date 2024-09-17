@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
     <title>MQ:米乔的个人网站</title>
@@ -15,6 +15,7 @@
             background-size: 2000%;
             text-align: center;
             animation: bgmove 120s infinite;
+            margin: 0;
         }
 
         @keyframes bgmove {
@@ -42,7 +43,7 @@
         }
 
         .navbar {
-            margin: 0 auto;
+            /*margin: 0 auto;*/
             width: 100%;
             height: 70px;
             border-radius: 10px;
@@ -53,8 +54,8 @@
             position: relative;
             transition: all 0.3s;
             position: fixed;
-            top: 0px;
-            left: 0px;
+            top: 5px;
+            left: 5px;
             backdrop-filter: blur(4px);
         }
 
@@ -69,11 +70,12 @@
             float: left;
             text-align: center;
         }
+
         .al {
             border: none;
             font-family: "Micosoft YaHei UI", "微软雅黑";
             font-size: 25px;
-            background-color: rgba(255,255,255,0);
+            background-color: rgba(255, 255, 255, 0);
             text-decoration: none;
             margin-top: 20px;
             box-sizing: border-box;
@@ -255,6 +257,132 @@
             white-space: nowrap;
         }
 
+        .container {
+            height: 40px;
+            position: relative;
+            display: flex;
+            width: 1000px;
+            overflow: hidden;
+            mask-image: linear-gradient(
+                    90deg, transparent, #fff 20%, #fff 80%, transparent
+            );
+        }
+
+        .container div {
+            white-space: nowrap;
+            animation: animate var(--t) linear infinite;
+        }
+
+        .container div:nth-child(2) {
+            animation: animate2 var(--t) linear infinite;
+            animation-delay: calc(var(--t) / -2);
+        }
+
+        .container div span {
+            display: inline-flex;
+            margin: 10px;
+            letter-spacing: .2em;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #000000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes animate {
+            from {
+                transform: translate(100%);
+            }
+            to {
+                transform: translate(-130%);
+            }
+        }
+
+        @keyframes animate2 {
+            from {
+                transform: translate(0);
+            }
+            to {
+                transform: translate(-200%);
+            }
+        }
+
+        .lb {
+            position: relative;
+            margin-left: 23%;
+            width: 1000px;
+            height: 220px;
+            border-radius: 20px;
+            color: #eee;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+            animation: am3 ease-out 1s 0.2s backwards;
+            transition: all 0.3s;
+            display: block;
+            justify-content: center;
+        }
+
+        .lb:hover {
+            box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.9),
+            4px 4px 25px rgba(0, 0, 0, 0.9);
+        }
+
+        .rm {
+            font-size: 50px;
+            height: 50px;
+            margin-top: 300px;
+        }
+
+        .qtwz {
+            font-size: 120px;
+            font-weight: bold;
+            height: 50px;
+            margin-top: 10px;
+            white-space: nowrap;
+        }
+
+        .bombar {
+            margin-top: 250px;
+            padding: 0;
+            width: 100%;
+            height: 1000px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .jr {
+            display: block;
+        }
+
+        .jrwm {
+            font-size: 120px;
+            font-weight: bold;
+            height: 50px;
+            color: #fff;
+            margin-top: 40px;
+            white-space: nowrap;
+        }
+
+        .wmjl {
+            width: 370px;
+            height: 462px;
+            border-radius: 10px;
+            transform: translate(0, 50px);
+        }
+
+        .qqhao {
+            color: #fff;
+            font-size: 20px;
+            height: 50px;
+            margin-top: 70px;
+        }
+
+    </style>
+    <style>
         .aig {
             margin-left: 20px;
             white-space: nowrap;
@@ -379,129 +507,6 @@
         .weatherg:hover {
             width: 210px;
             box-shadow: 0px 0px 10px #999, inset 0px 0px 5px #333;
-        }
-
-        .container {
-            height: 40px;
-            position: relative;
-            display: flex;
-            width: 1000px;
-            overflow: hidden;
-            mask-image: linear-gradient(
-                    90deg, transparent, #fff 20%, #fff 80%, transparent
-            );
-        }
-
-        .container div {
-            white-space: nowrap;
-            animation: animate var(--t) linear infinite;
-        }
-
-        .container div:nth-child(2) {
-            animation: animate2 var(--t) linear infinite;
-            animation-delay: calc(var(--t) / -2);
-        }
-
-        .container div span {
-            display: inline-flex;
-            margin: 10px;
-            letter-spacing: .2em;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: #000000;
-            padding: 5px 10px;
-            border-radius: 5px;
-            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
-            2px 2px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        @keyframes animate {
-            from {
-                transform: translate(100%);
-            }
-            to {
-                transform: translate(-130%);
-            }
-        }
-
-        @keyframes animate2 {
-            from {
-                transform: translate(0);
-            }
-            to {
-                transform: translate(-200%);
-            }
-        }
-
-        .lb{
-            position: relative;
-            margin-left: 23%;
-            width: 1000px;
-            height: 220px;
-            border-radius: 20px;
-            color: #eee;
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
-            2px 2px 15px rgba(0, 0, 0, 0.5);
-            animation: am3 ease-out 1s 0.2s backwards;
-            transition: all 0.3s;
-            display: block;
-            justify-content: center;
-        }
-
-        .lb:hover {
-            box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.9),
-            4px 4px 25px rgba(0, 0, 0, 0.9);
-        }
-
-        .rm {
-            font-size: 50px;
-            height: 50px;
-            margin-top: 300px;
-        }
-
-        .qtwz {
-            font-size: 120px;
-            font-weight: bold;
-            height: 50px;
-            margin-top: 10px;
-            white-space: nowrap;
-        }
-
-        .bombar {
-            margin-top: 200px;
-            width: 100%;
-            height: 1000px;
-            background-color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .jr{
-            display: block;
-        }
-
-        .jrwm {
-            font-size: 120px;
-            font-weight: bold;
-            height: 50px;
-            color: #fff;
-            margin-top: 40px;
-            white-space: nowrap;
-        }
-
-        .wmjl {
-            width: 370px;
-            height: 462px;
-            border-radius: 10px;
-            transform: translate(0, 50px);
-        }
-
-        .qqhao {
-            color: #fff;
-            font-size: 20px;
-            height: 50px;
-            margin-top: 70px;
         }
 
     </style>
@@ -695,13 +700,13 @@
         </div>
     </div>
 </div>
-<div class="bombar">
+<footer class="bombar">
     <div class="jr">
         <p class="jrwm">加入我们</p>
         <img src="https://ajimiqiao.github.io/mqhome/rwmjl.jpg" class="wmjl">
         <p class="qqhao">QQ:3497867186</p>
     </div>
-</div>
+</footer>
 <script>
     window.addEventListener(
         "mousewheel",
